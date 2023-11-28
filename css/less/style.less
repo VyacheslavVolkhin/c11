@@ -2,6 +2,20 @@
 .section-page-padding {
     padding: 8rem 0 !important;
 }
+.btn {
+    &.button-dark {
+        &:not(:hover) {
+            background-color: #151516;
+            border-color: #151516;
+        }
+    }
+    &.button-dark-att {
+        &:not(:hover) {
+            background-color: #0047BB;
+            border-color: #0047BB;
+        }
+    }
+}
 .list-marker {
     li {
         padding-left: 1.4em;
@@ -19,7 +33,15 @@
         }
     }
 }
-
+.main-news-box {
+    &.section-light {
+        background-color: transparent;
+        .item-tile-new {
+            border: 1px solid #C9CBCE;
+            box-shadow: none;
+        }
+    }
+}
 .main-actions-qr-wrap {
     &.actions-small {
         .action-button+.action-button {
@@ -27,6 +49,24 @@
         }
         .btn-action-app {
             width: 145px;
+        }
+        .btn-action-qr {
+            width: 80px;
+            height: 80px;
+        }
+        .action-qr {
+            .action-title {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    &.actions-medium {
+        .action-button+.action-button {
+            margin-right: 1.2rem;
+        }
+        .btn-action-app {
+            width: 174px;
         }
         .btn-action-qr {
             width: 80px;
@@ -141,10 +181,89 @@
         .info-text {
             padding-right: 3rem;
         }
+        .page-subtitle {
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--clr-att);
+            margin: 0 0 8px 0;
+        }
     }
     &.section-card {
         .info-inner-wrap {
             margin-bottom: 0;
+        }
+    }
+    &.section-text, &.section-text.section-page {
+        .inner-wrap {
+            display: block;
+        }
+        .title-wrap {
+            &:last-child {
+                margin-bottom: 0;
+            }
+            p {
+                max-width: (840/24em);
+                margin-bottom: 2.4rem;
+            }
+        }
+        .photo-inner-wrap {
+            display: none;
+        }
+        .info-inner-wrap {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .buttons-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px -8px 0;
+        .btn {
+            margin: 0 8px 8px 0;
+            flex-shrink: 0;
+            height: 5.2rem;
+            padding: 0 15px;
+            font-size: 2rem;
+            min-width: 0;
+            border-radius: 1.6rem;
+        }
+    }
+    .photo-text-wrap {
+        margin: 0 auto;
+        position: relative;
+        border-radius: 3.2rem;
+        padding: 4.8rem;
+        background: #F0F2F6;
+        text-align: left;
+        font-weight: 400;
+        line-height: (36/24);
+        color: #000;
+        min-height: 56rem;
+        .photo-text-image {
+            width: 70%;
+            max-width: 28.4rem;
+            margin: 0 auto 4rem auto;
+            padding-top: 2rem;
+            img, svg {
+                display: block;
+                width: 100%;
+            }
+        }
+        .photo-text-title {
+            font-size: 4.8rem;
+            font-weight: 600;
+            margin: 0 0 3.2rem 0;
+            letter-spacing: -0.96px;
+            line-height: 1.2;
+            &.title-large {
+                font-size: 5.6rem;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -160,6 +279,12 @@
                 }
             }
         }
+        .photo-text-wrap {
+            padding: 2.4rem;
+            .photo-text-title {
+                font-size: 3.6rem;
+            }
+        }
     }
 }
 @media (min-width: 640px) {
@@ -173,6 +298,19 @@
         &.section-page, &.section-card {
             .photo-inner-wrap {
                 max-width: 50%;
+            }
+            .info-inner-wrap {
+                &.text-padding {
+                    padding-right: 6.4rem;
+                }
+            }
+            &.section-reverse {
+                .info-inner-wrap {
+                    &.text-padding {
+                        padding-right: 0;
+                        padding-left: 6.4rem;
+                    }
+                }
             }
         }
         &.section-card {

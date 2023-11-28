@@ -1,52 +1,62 @@
-/* ----------------------------------- *\
-			items styles
-\* ----------------------------------- */
-.item-photo {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    line-height: 1;
-    &:before {
-        content: "";
-        display: block;
-        padding-top: 100%;
-    }
-    img {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-    &.photo-full {
-        &:before {
-            display: none;
+.item-tile-about {
+    &.tile-money {
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #151516;
+        padding: 3.2rem 2.4rem;
+        flex-direction: column;
+        min-height: 0;
+        justify-content: space-between;
+        .tile-title-wrap {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 3.2rem 0;
+            text-align: center;
         }
-        img {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            left: auto;
-            right: auto;
+        .tile-photo-wrap {
+            height: auto;
+            flex-shrink: 0;
+            width: 100%;
+            margin: 0;padding: 0;
+            &.photo-max {
+                height: 22.8rem;
+                .tile-photo {
+                    height: 26rem;
+                }
+            }
+        }
+        .tile-photo {
+            height: 22.8rem;
+            max-width: 30rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tile-title {
+            font-size: 3.2rem;
+            line-height: (40/32);
+            letter-spacing: -0.64px;
+            margin-bottom: 4px;
+            font-weight: bold;
         }
     }
 }
-.elm-ico, .button-ico, .menu-ico, .frm-ico {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
-    img, .i, svg {
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: 100%;
-        max-height: 100%;
+@media (max-width: 1399px) {
+    .item-tile-about {
+        &.tile-money {
+            .tile-title {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .item-tile-about {
+        &.tile-money {
+            font-size: 14px;
+            .tile-title {
+                font-size: 3.2rem;
+            }
+        }
     }
 }
